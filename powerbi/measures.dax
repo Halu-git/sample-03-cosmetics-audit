@@ -1,0 +1,157 @@
+// =====================================================================
+// DAX measures — Japan Cosmetics & Skincare Market Entry Audit (dashboard)
+// Data: audit_data_appendix.xlsx (accessed 2026-11-12). Model: model.md.
+//
+// Policy (mirrors the report §2/§7 and design.md rules):
+//  - Measure branching: base measures first; derived measures reference
+//    them and are ALL prefixed "Derived —". Implicit measures (dragging a
+//    column into a visual) are prohibited.
+//  - Published values stay published: YoY % and origin shares are stored
+//    columns in the facts and are surfaced with AVERAGE (one row per
+//    filter context). They are NEVER recalculated from the values.
+//  - Sparse years: the facts hold only published years, so NO YoY/growth
+//    measure is computed across years. There is deliberately no
+//    "YoY (calculated)" measure in this file.
+//  - Layer separation: Layer 2 (consumer voice) measures live in their own
+//    section and must never be used on Layer 1 pages or to size a market.
+//  - Display formats: JPY bn #,##0.0 / JPY #,##0 / % 0.0 / rating 0.0.
+// =====================================================================
+
+// ---------------------------------------------------------------------
+// Layer 1 — Market size (FactMarketSize)
+// ---------------------------------------------------------------------
+
+Shipment Value (JPY bn) =
+SUM ( FactMarketSize[ValueJPYbn] )
+
+// Published YoY for the selected indicator/year — a stored column.
+Shipment YoY % (published) =
+AVERAGE ( FactMarketSize[YoYPctPublished] )
+
+// DERIVED. Denominator is fixed to the 2019 peak row; numerator follows the
+// year filter. Reproduces the appendix's published derived value (73.9%
+// for 2023). If the appendix is refreshed, this must still match the
+// appendix's own Derived row — the appendix wins any disagreement.
+Derived — Recovery vs 2019 Peak % =
+VAR Peak2019 =
+    CALCULATE (
+        [Shipment Value (JPY bn)],
+        FILTER ( ALL ( DimYear ), DimYear[YearKey] = 2019 )
+    )
+RETURN
+    DIVIDE ( [Shipment Value (JPY bn)], Peak2019 ) * 100
+
+// DERIVED. Reported in the audit text as "≈26% below peak".
+Derived — Gap vs 2019 Peak % =
+100 - [Derived — Recovery vs 2019 Peak %]
+
+// ---------------------------------------------------------------------
+// Layer 1 — Category mix (FactCategoryShare)
+// ---------------------------------------------------------------------
+
+// Published share of factory shipment value. One row per category, so
+// AVERAGE returns the published figure unchanged; do not "re-share" by
+// dividing category values (there are no category values, only shares).
+Category Share % (published) =
+AVERAGE ( FactCategoryShare[SharePct] )
+
+// ---------------------------------------------------------------------
+// Layer 1 — Trade (FactTradeFlow / FactImportsByOrigin / FactImportsByCategory)
+// ---------------------------------------------------------------------
+
+Trade Value (JPY bn) =
+SUM ( FactTradeFlow[ValueJPYbn] )
+
+Imports by Origin (JPY bn) =
+SUM ( FactImportsByOrigin[ValueJPYbn] )
+
+// Published share of the association-scope total (30.3 / 24.4). For
+// "All other origins" this returns the derived share stored in the fact
+// (45.3, IsDerived = TRUE) — the fact carries it, DAX does not invent it.
+Import Share % (published) =
+AVERAGE ( FactImportsByOrigin[SharePctPublished] )
+
+Import YoY % (published) =
+AVERAGE ( FactImportsByOrigin[YoYPctPublished] )
+
+Imports by Category (JPY bn) =
+SUM ( FactImportsByCategory[ValueJPYbn] )
+
+Import Category YoY % (published) =
+AVERAGE ( FactImportsByCategory[YoYPctPublished] )
+
+// ---------------------------------------------------------------------
+// Layer 1 — Channel & household (FactChannel / FactHousehold)
+// ---------------------------------------------------------------------
+
+// Periods are mixed grains (full year / H1 / single month). This measure is
+// only valid with a single Indicator + Period selected; pages.md fixes the
+// contexts. Never place two periods on one axis as a "trend".
+Channel Sales (JPY bn) =
+SUM ( FactChannel[ValueJPYbn] )
+
+Channel YoY % (published) =
+AVERAGE ( FactChannel[YoYPctPublished] )
+
+// DERIVED. Single-month context only (Sep 2024): beauty care 96.0 of
+// total drugstore sales 728.8. Both inputs are FactChannel rows for the
+// same period; the measure hard-filters the period so it cannot leak
+// into other contexts.
+Derived — Beauty Care Share of Drugstore Sales (Sep 2024) % =
+VAR BeautySep =
+    CALCULATE (
+        [Channel Sales (JPY bn)],
+        FactChannel[Indicator] = "Drugstore sales - beauty care (cosmetics & sundries)",
+        FactChannel[Period] = "2024-09 (single month)"
+    )
+VAR TotalSep =
+    CALCULATE (
+        [Channel Sales (JPY bn)],
+        FactChannel[Indicator] = "Drugstore sales - all categories",
+        FactChannel[Period] = "2024-09 (single month)"
+    )
+RETURN
+    DIVIDE ( BeautySep, TotalSep ) * 100
+
+Household Expenditure (JPY) =
+SUM ( FactHousehold[ValueJPY] )
+
+// ---------------------------------------------------------------------
+// Layer 2 — Consumer voice (FactConsumerVoice) — SAMPLE DATA.
+// These measures describe the sample only. Using them to size or trend
+// the market is prohibited (report §8 / design.md §2 table rules).
+// ---------------------------------------------------------------------
+
+// Sample size under the current page filters. Page 4 must always show
+// this next to any Layer 2 visual (full sample: N = 32).
+Sample N =
+COUNTROWS ( FactConsumerVoice )
+
+Total Reviews in Sample =
+SUM ( FactConsumerVoice[ReviewCount] )
+
+// Average rating — SINGLE PLATFORM ONLY. Ratings use different scales
+// per platform (@cosme max 7, Amazon max 5) and Rakuten has none, so the
+// measure returns BLANK unless exactly one platform is in context.
+Avg Rating (single platform only) =
+IF (
+    HASONEVALUE ( DimPlatform[Platform] ),
+    AVERAGE ( FactConsumerVoice[Rating] ),
+    BLANK ()
+)
+
+// "Price from" = the lower bound of the displayed price range
+// (PriceMinJPY). A price-positioning indicator for the sample only.
+Median Price From (JPY) =
+MEDIAN ( FactConsumerVoice[PriceMinJPY] )
+
+// ---------------------------------------------------------------------
+// Deliberately NOT provided (do not add):
+//  - Any YoY/growth measure computed from values across the sparse
+//    published years (e.g., 2014→2024 import "growth").
+//  - Any combined "market size" that adds shipments + imports
+//    (different bases; double counting — design.md §7.2).
+//  - Any cross-platform rating average or rating ranking.
+//  - Any competitor revenue measure (no revenue data exists in the
+//    model by design; CompetitorEvidence is an evidence table only).
+// ---------------------------------------------------------------------
