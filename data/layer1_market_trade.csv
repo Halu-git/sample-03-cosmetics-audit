@@ -1,0 +1,28 @@
+series,year,value_jpy_bn,change_yoy_pct,basis,source,accessed
+Domestic factory shipments of cosmetics (all categories),2019,1761.1,,Factory shipment value (peak year),METI committee material (Industrial Structure Council) citing Census of Manufactures / Production Dynamics Statistics,2026-11-12
+Domestic factory shipments of cosmetics (all categories),2023,1302.4,2.9,Factory shipment value,Japan Cosmetic Industry Association (JCIA) statistics page citing METI Production Dynamics Statistics,2026-11-12
+Category share of factory shipments - Skin care products,2023,43.6,,Share of shipment value,Japan Cosmetic Industry Association (JCIA),2026-11-12
+Category share of factory shipments - Hair care products,2023,28.0,,Share of shipment value,Japan Cosmetic Industry Association (JCIA),2026-11-12
+Category share of factory shipments - Makeup products,2023,20.7,,Share of shipment value,Japan Cosmetic Industry Association (JCIA),2026-11-12
+Category share of factory shipments - Special-purpose products,2023,7.0,,Share of shipment value,Japan Cosmetic Industry Association (JCIA),2026-11-12
+Category share of factory shipments - Fragrances,2023,0.7,,Share of shipment value,Japan Cosmetic Industry Association (JCIA),2026-11-12
+Cosmetics exports (HS Ch.33 cosmetics aggregate),2014,152.3,,Customs value FOB,Ministry of Finance Trade Statistics (as compiled by JCIA / Cosmetic Science journal table),2026-11-12
+Cosmetics exports,2021,790.6,,Customs value FOB (peak year),Ministry of Finance Trade Statistics (as compiled by JCIA),2026-11-12
+Cosmetics exports,2023,608.3,,Customs value FOB,Ministry of Finance Trade Statistics (as compiled by JCIA),2026-11-12
+Cosmetics exports,2024,520.1,,Customs value FOB,Ministry of Finance Trade Statistics (as compiled by JCIA),2026-11-12
+Cosmetics imports,2014,217.1,,Customs value CIF,Ministry of Finance Trade Statistics (as compiled by JCIA),2026-11-12
+Cosmetics imports,2023,377.1,,Customs value CIF,Ministry of Finance Trade Statistics (as compiled by JCIA),2026-11-12
+Cosmetics imports,2024,446.1,,Customs value CIF,Ministry of Finance Trade Statistics (as compiled by JCIA),2026-11-12
+Cosmetics imports (excl. toothpaste and soap),2024,443.8,17.7,Customs value CIF,Japan Imported Cosmetics Association annual release (reported 2025-02-10),2026-11-12
+Imports from South Korea (excl. toothpaste and soap),2024,134.3,40.0,Customs value CIF; share 30.3% of the same total,Japan Imported Cosmetics Association,2026-11-12
+Imports from France (excl. toothpaste and soap),2024,108.3,19.4,Customs value CIF; share 24.4%,Japan Imported Cosmetics Association,2026-11-12
+Imports - base makeup and skin care category,2024,200.6,20.1,Customs value CIF,Japan Imported Cosmetics Association,2026-11-12
+Imports - colour makeup category,2024,73.0,29.8,Customs value CIF,Japan Imported Cosmetics Association,2026-11-12
+Imports - hair care category,2024,59.8,0.7,Customs value CIF,Japan Imported Cosmetics Association,2026-11-12
+Imports - fragrance category,2024,47.5,21.1,Customs value CIF,Japan Imported Cosmetics Association,2026-11-12
+Drugstore total sales (all categories),2024,8919.9,6.9,Retail sales value; store count +3.3% YoY,METI Current Survey of Commerce - 2024 annual review,2026-11-12
+Drugstore beauty care (cosmetics and sundries) sales H1,2024,547.2,,Retail sales value (Jan-Jun cumulative),METI Current Survey of Commerce - H1 2024 review,2026-11-12
+Drugstore beauty care sales (monthly),2024-09,96.0,12.6,Retail sales value (single month),METI Current Survey of Commerce - monthly flash Sep 2024,2026-11-12
+Household consumption expenditure - two-or-more-person households (monthly avg),2024,300243 JPY,,Nominal +2.1% YoY; real -1.1% YoY,Ministry of Internal Affairs and Communications - Family Income and Expenditure Survey 2024 annual summary,2026-11-12
+Inbound travel consumption (all purposes),2026 Q3,2207.6,3.2,Survey estimate (preliminary),Japan Tourism Agency - Inbound Consumption Trend Survey Q3 2026 flash,2026-11-12
+USD/JPY reference rate,2026-11-11,159.7 JPY per USD,,Mid-market reference (OANDA via Finnhub),Reference rate used for indicative USD conversions in this report,2026-11-12

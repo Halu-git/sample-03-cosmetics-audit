@@ -1,0 +1,33 @@
+platform,sample_frame,displayed_rank,brand,product,rating,rating_scale,review_count,price_jpy,accessed,notes
+@cosme,Review ranking - lotions (aggregation period 2026-08-05 to 2026-11-04; page updated 2026-11-06),1,IPSA,The Time R Aqua e (200ml),5.2,7,3660,5500,2026-11-12,Rank 1 cross-confirmed on @cosme product pages
+@cosme,Review ranking - lotions (same period),2,SK-II (P&G),Facial Treatment Essence,5.6,7,40386,12650-29150,2026-11-12,Rank 2 cross-confirmed on @cosme product pages
+@cosme,Review ranking - lotions (same period),4,ELIXIR (Shiseido),Brightening Lotion - moist type ca (150ml),5.5,7,2611,3300,2026-11-12,Rank as printed on category page; product pages list the ELIXIR Brightening Lotion line at No.3 - see methods note
+@cosme,Review ranking - lotions (same period),5,ELIXIR (Shiseido),Brightening Lotion - fresh type ca (150ml),5.3,7,1610,3300,2026-11-12,
+@cosme,Review ranking - lotions (same period),6,SOFINA BASIC+ (Kao),Uruoi Turbo Lotion (150-160ml),5.2,7,673,1210-1430,2026-11-12,
+@cosme,Review ranking - lotions (same period),7,d program (Shiseido),Moist Care Lotion EX (125ml),5.5,7,5763,2860-3300,2026-11-12,2025 @cosme Best Cosme item award winner
+@cosme,Review ranking - lotions (same period),8,Curel (Kao),Deep Moisture Spray (250g),5.6,7,9621,990-2750,2026-11-12,@cosme Best Cosme Hall of Fame product
+@cosme,Review ranking - lotions/boosters (same period),9,DECORTE (KOSE),Liposome Advanced Repair Serum,5.8,7,18671,8800-17600,2026-11-12,Highest rating in the sampled top 10
+@cosme,Review ranking - lotions (same period),10,Unbranded/PDRN line,PDRN Hyaluronic Hydrating Mist,5.1,7,3388,1265-2380,2026-11-12,Ingredient-led (PDRN) product in top 10
+@cosme Shopping,Bestseller ranking - lotions (sales-based; accessed 2026-11-12),1,IPSA,The Time R Aqua e (200ml),5.2,7,3644,5500,2026-11-12,@cosme review score shown alongside sales rank
+@cosme Shopping,Bestseller ranking - lotions,2,ELIXIR (Shiseido),Lift Moist Lotion - Mask-grade Moisture ca (170ml),5.7,7,543,3630,2026-11-12,
+@cosme Shopping,Bestseller ranking - lotions,3,ALBION,Medicated Skin Conditioner Essential N (330ml),5.6,7,3585,9680,2026-11-12,
+@cosme Shopping,Bestseller ranking - lotions,4,SOFINA BASIC+ (Kao),Uruoi Turbo Lotion (160ml),5.3,7,659,1430,2026-11-12,
+Rakuten Ichiba,Daily ranking - skincare (data date 2026-11-10),1,Attenir,Skin Clear Cleanse Oil 350ml,,5,50283,3630,2026-11-12,Review count shown; star rating not captured in text view
+Rakuten Ichiba,Daily ranking - skincare (data date 2026-11-10),2,ELIXIR (Shiseido),ELIXIR Superieur line product (authorised-shop listing),,5,3137,6600,2026-11-12,
+Rakuten Ichiba,Daily ranking - skincare (data date 2026-11-10),3,N organic,N organic Basic set (lotion/serum/cream set),,5,2896,11000,2026-11-12,Domestic D2C brand
+Rakuten Ichiba,Daily ranking - skincare (data date 2026-11-10),4,shu uemura,ultime8 Cleansing Oil bestseller kit,,5,35989,13200,2026-11-12,
+Rakuten Ichiba,Daily ranking - skincare (data date 2026-11-10),6,AESTURA (Amorepacific - KR),Atobarrier 365 Cream,,5,2805,3300,2026-11-12,Korean brand in top 10; displayed rank 5 not legible in text view - see methods note
+Rakuten Ichiba,Daily ranking - skincare (data date 2026-11-10),7,VT Cosmetics (KR),Soothing Sheet Mask set,,5,182,4560,2026-11-12,Korean brand in top 10
+Rakuten Ichiba,Daily ranking - skincare (data date 2026-11-10),8,FANCL,Mild Cleansing Oil,,5,15079,1980,2026-11-12,
+Rakuten Ichiba,Daily ranking - skincare (data date 2026-11-10),9,TAKAMI,TAKAMI Skin Peel,,5,6604,5720,2026-11-12,Domestic D2C / derma-inspired brand
+Rakuten Ichiba,Daily ranking - skincare (data date 2026-11-10),11,ELIXIR (Shiseido),Brightening Lotion ca refill 150ml,,5,490,3300,2026-11-12,
+Rakuten Ichiba,Daily ranking - skincare (data date 2026-11-10),12,Yunth,Yunth Raw Vitamin C Whitening Serum (1ml x 28),,5,45427,3960,2026-11-12,Domestic indie; very high review count
+Amazon.co.jp,Bestseller ranking - lotions (ARCHIVED page copy dated 2024-04-25 - structural reference only),1,Rohto Hada Labo,Shirojyun Premium Medicated Whitening Lotion - moist (170ml),4.4,5,2167,500,2026-11-12,Archived copy; not a current ranking - see methods note
+Amazon.co.jp,Bestseller ranking - lotions (archived 2024-04-25),2,TOUVER,Balancing GA Lotion (100ml),4.2,5,712,2000,2026-11-12,Ingredient-led domestic indie
+Amazon.co.jp,Bestseller ranking - lotions (archived 2024-04-25),3,Rohto Melano CC,Melano CC Medicated Whitening Lotion set,4.5,5,2123,1431,2026-11-12,
+Amazon.co.jp,Bestseller ranking - lotions (archived 2024-04-25),5,Reihaku,Hatomugi Skin Conditioner 1000ml,4.4,5,5762,350,2026-11-12,Ultra-low price point
+Amazon.co.jp,Bestseller ranking - lotions (archived 2024-04-25),6,ORBIS,Clearful Lotion - moist (180ml refill),4.4,5,817,1430,2026-11-12,
+Amazon.co.jp,Bestseller ranking - lotions (archived 2024-04-25),8,by Amazon (Aoyama Labo),Ceramide Lotion 1L,4.3,5,3873,900,2026-11-12,Private label in top 10
+Amazon.co.jp,Bestseller ranking - lotions (archived 2024-04-25),9,MUJI,Sensitive Skin Moisturising Milk/Lotion 400ml,4.4,5,2009,980,2026-11-12,
+Amazon.co.jp,Bestseller ranking - lotions (archived 2024-04-25),11,Anua (KR),Heartleaf 77% Soothing Toner 250ml,4.4,5,707,2200,2026-11-12,Korean brand just outside top 10
+Amazon.co.jp,Bestseller ranking - lotions (archived 2024-04-25),16,VT Cosmetics (KR),CICA Mild Toner Pads (60 pads),4.4,5,2204,1815,2026-11-12,Korean brand
